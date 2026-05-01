@@ -25,8 +25,8 @@ button.addEventListener('click', function(button) {
 
 document.addEventListener('DOMContentLoaded', function() {
     // читаем из localStorage и отрисовываем заметки
-    const savedNotes = JSON.parse(localStorage.getItem('notes').
-    foreEach(function(loadNote) {
+    const savedNotes = JSON.parse(localStorage.getItem('notes'))
+    savedNotes.forEach(function(loadNote) {
     const lisave = document.createElement('li');
     lisave.className = 'note-item'
     lisave.textContent = loadNote;
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const btn = document.createElement('button')
     btn.className = 'delete-btn'
     btn.textContent = 'Удалить'
-    li.appendChild(btn)
+    lisave.appendChild(btn)
 
     btn.addEventListener('click', function() {
-    li.remove()
+    lisave.remove()
 })
-    document.getElementById('notes-list').appendChild(li);
-    }))
-})
+    document.getElementById('notes-list').appendChild(lisave);
+    })
+    })
